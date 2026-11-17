@@ -1,0 +1,458 @@
+/* =========================================
+   FINAL PROJECT — THEME VARIABLES
+========================================= */
+
+:root,
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    --page-bg: #080808;
+    --panel-bg: #151515;
+    --raised-bg: #202020;
+
+    --text-color: #f4f1ea;
+    --muted-color: #b9b9b9;
+    --line-color: #555555;
+    --accent-color: #ff938d;
+
+    --button-bg: #bd241e;
+    --button-hover: #971a16;
+    --button-text: #ffffff;
+
+    --field-bg: #202020;
+    --error-color: #ffaca7;
+    --success-bg: #103b2b;
+    --success-text: #dcffeb;
+    --focus-color: #ffb348;
+    --row-hover: #33201e;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+
+    --page-bg: #f6f3ee;
+    --panel-bg: #ffffff;
+    --raised-bg: #ece7df;
+
+    --text-color: #171717;
+    --muted-color: #53504b;
+    --line-color: #c8c1b6;
+    --accent-color: #a9211b;
+
+    --button-bg: #bd241e;
+    --button-hover: #971a16;
+    --button-text: #ffffff;
+
+    --field-bg: #ffffff;
+    --error-color: #b51f19;
+    --success-bg: #e0f4e8;
+    --success-text: #145331;
+    --focus-color: #005fcc;
+    --row-hover: #f9e8e5;
+}
+
+/* =========================================
+   PAGE AND NAVIGATION
+========================================= */
+
+body {
+    background: var(--page-bg);
+    color: var(--text-color);
+}
+
+.brand-navbar,
+.site-footer,
+.inventory-hero,
+.inventory-section,
+.compare-section,
+.faq-section,
+.process-section {
+    background: var(--page-bg);
+    color: var(--text-color);
+}
+
+.brand-navbar {
+    border-bottom-color: var(--line-color);
+}
+
+.brand-navbar .brand-logo,
+.site-footer .brand-logo {
+    color: var(--text-color) !important;
+}
+
+.brand-navbar .nav-link {
+    color: var(--muted-color);
+}
+
+.brand-navbar .nav-link:hover,
+.brand-navbar .nav-link.active {
+    color: var(--text-color) !important;
+}
+
+.brand-navbar .nav-link.active {
+    text-decoration-color: var(--accent-color);
+}
+
+.brand-navbar .nav-link::after {
+    background: var(--accent-color);
+}
+
+.brand-navbar .logo-mark::after,
+.site-footer .logo-mark::after {
+    background: var(--text-color);
+}
+
+.brand-navbar .navbar-toggler {
+    border-color: var(--line-color);
+}
+
+html[data-theme="light"] .brand-navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.theme-menu-item {
+    margin-left: 14px;
+}
+
+.theme-toggle {
+    padding: 9px 14px;
+    color: var(--text-color);
+    background: var(--raised-bg);
+    border: 1px solid var(--line-color);
+    border-radius: 6px;
+
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-color);
+}
+
+:focus-visible {
+    outline: 3px solid var(--focus-color) !important;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   CARDS AND CONTENT
+========================================= */
+
+.listing,
+.catalog-controls,
+.purchase-form,
+.custom-accordion .accordion-item,
+#comparison {
+    background: var(--panel-bg);
+    color: var(--text-color);
+    border-color: var(--line-color);
+}
+
+.listing .eyebrow,
+.eyebrow,
+.section-description,
+.process-grid p,
+.inventory-hero > .container > p:last-child,
+.footer-top p,
+.footer-links a,
+.footer-bottom,
+.credits {
+    color: var(--muted-color);
+}
+
+.listing:hover {
+    border-color: var(--accent-color);
+}
+
+.listing-body > strong {
+    color: var(--accent-color);
+}
+
+.process-grid,
+.process-grid article,
+.footer-bottom {
+    border-color: var(--line-color);
+}
+
+.process-grid article:hover {
+    background: var(--raised-bg);
+}
+
+.process-grid article > span {
+    color: var(--muted-color);
+}
+
+.process-grid article > strong {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.inventory-hero h1 span {
+    -webkit-text-stroke-color: var(--muted-color);
+}
+
+.why-section,
+.purchase-section {
+    background: var(--raised-bg);
+    color: var(--text-color);
+}
+
+.purchase-copy h2,
+.purchase-step strong {
+    color: var(--text-color);
+}
+
+.purchase-copy > p,
+.purchase-step p,
+.reason-item p,
+.dark-eyebrow {
+    color: var(--muted-color);
+}
+
+.purchase-step,
+.reason-item,
+.reason-item:last-child {
+    border-color: var(--line-color);
+}
+
+.purchase-step > span,
+.reason-item > span {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-label,
+.form-check-label,
+.form-title h3 {
+    color: var(--text-color);
+}
+
+.form-title span {
+    color: var(--accent-color);
+}
+
+.form-disclaimer {
+    color: var(--muted-color);
+}
+
+.purchase-form .form-control,
+.purchase-form .form-select,
+.catalog-controls .form-control,
+.catalog-controls .form-select {
+    color: var(--text-color);
+    background-color: var(--field-bg);
+    border-color: var(--line-color);
+}
+
+.purchase-form .form-select option {
+    color: var(--text-color);
+    background: var(--field-bg);
+}
+
+.purchase-form .form-control::placeholder,
+.catalog-controls .form-control::placeholder {
+    color: var(--muted-color);
+    opacity: 1;
+}
+
+.purchase-form .form-control:focus,
+.purchase-form .form-select:focus {
+    color: var(--text-color);
+    background-color: var(--field-bg);
+    border-color: var(--focus-color);
+}
+
+.purchase-form .is-invalid {
+    border-color: var(--error-color);
+}
+
+.invalid-feedback {
+    color: var(--error-color);
+}
+
+.form-check-input {
+    background-color: var(--field-bg);
+    border-color: var(--muted-color);
+}
+
+.form-check-input:checked {
+    background-color: var(--button-bg);
+    border-color: var(--button-bg);
+}
+
+.success-message {
+    background: var(--success-bg);
+    color: var(--success-text);
+    border-color: var(--success-text);
+}
+
+/* =========================================
+   BUTTONS AND FAQ
+========================================= */
+
+.main-button,
+.navbar-button,
+.featured-buy {
+    color: var(--button-text);
+    background: var(--button-bg);
+    border-color: var(--button-bg);
+}
+
+.main-button:hover,
+.navbar-button:hover,
+.featured-buy:hover {
+    color: var(--button-text);
+    background: var(--button-hover);
+    border-color: var(--button-hover);
+}
+
+.compare-button {
+    color: var(--text-color);
+    border-color: var(--line-color);
+}
+
+.compare-button:hover,
+.compare-button[aria-pressed="true"] {
+    background: var(--text-color);
+    color: var(--panel-bg);
+}
+
+.custom-accordion .accordion-button,
+.custom-accordion .accordion-body {
+    color: var(--text-color);
+    background: var(--panel-bg);
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--accent-color);
+    background: var(--raised-bg);
+}
+
+.custom-accordion .accordion-body {
+    color: var(--muted-color);
+}
+
+html[data-theme="light"] .custom-accordion .accordion-button::after {
+    filter: grayscale(1) brightness(0.35);
+}
+
+/* =========================================
+   COMPARISON TABLE AND NOTIFICATION
+========================================= */
+
+#comparison .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: var(--text-color);
+    --bs-table-border-color: var(--line-color);
+}
+
+#comparison caption {
+    color: var(--text-color);
+    background: var(--raised-bg);
+    border-color: var(--accent-color);
+}
+
+#comparison thead th {
+    color: var(--muted-color);
+    background: var(--raised-bg);
+    border-color: var(--line-color);
+}
+
+#comparison tbody th,
+#comparison tbody td {
+    color: var(--text-color);
+    border-color: var(--line-color);
+}
+
+#comparison tbody td:nth-child(2),
+#comparison > p {
+    color: var(--muted-color);
+}
+
+#comparison tbody td:nth-child(3) {
+    color: var(--accent-color);
+}
+
+#comparison tbody tr:nth-child(even) > * {
+    background: var(--raised-bg);
+}
+
+#comparison tbody tr:hover > * {
+    background: var(--row-hover);
+}
+
+.comparison-notice {
+    background: var(--panel-bg);
+    color: var(--text-color);
+    border-color: var(--accent-color);
+}
+
+.comparison-notice-close {
+    color: var(--text-color);
+}
+
+.comparison-notice-close:hover {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   PHOTOGRAPHIC SECTIONS
+   Keep light text over dark image overlays.
+========================================= */
+
+.hero,
+.final-cta {
+    color: #f4f1ea;
+}
+
+.hero .eyebrow,
+.final-cta .eyebrow {
+    color: #d3cec4;
+}
+
+.hero-description,
+.final-cta > .container > p:not(.eyebrow) {
+    color: #d0d0d0;
+}
+
+.featured-model-box {
+    color: #f4f1ea;
+}
+
+.featured-model-box > p,
+.featured-price small {
+    color: #c5c5c5;
+}
+
+.brand-strip {
+    background: var(--raised-bg);
+    color: var(--text-color);
+}
+
+.numbers-section {
+    background: var(--button-bg);
+}
+
+.numbers-grid span {
+    color: #ffffff;
+}
+
+/* =========================================
+   RESPONSIVE ADJUSTMENTS
+========================================= */
+
+@media (max-width: 991px) {
+    .theme-menu-item {
+        margin: 12px 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .inventory-hero h1 {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+}

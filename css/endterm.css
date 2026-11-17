@@ -28,3 +28,228 @@ html { scroll-behavior:auto; }
 .hero-content,.why-layout>* { min-width:0; }
 @media(max-width:767px) { .endterm-grid {grid-template-columns:1fr;} .listing img {height:230px;} .listing h3 {font-size:2.2rem;} .catalog-controls {padding:16px 0;} .hero h1 {font-size:clamp(3.8rem,15vw,6rem);} .section-title {font-size:clamp(2.8rem,11vw,5rem);} .featured-model-box {margin-left:0;} }
 @media(prefers-reduced-motion:reduce) { *,*::before,*::after {transition:none!important; animation:none!important; scroll-behavior:auto!important;} }
+
+/* Visible comparison-limit notification */
+.comparison-notice {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+
+    width: min(460px, calc(100% - 32px));
+    padding: 18px 48px 18px 20px;
+
+    color: #fff;
+    background: #181818;
+    border: 1px solid #ef352d;
+    border-left: 5px solid #ef352d;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.comparison-notice[hidden] {
+    display: none;
+}
+
+.comparison-notice-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.comparison-notice-close:hover {
+    color: #ef352d;
+}
+
+/* =========================================
+   COMPARISON TABLE
+========================================= */
+
+#comparison {
+    margin: 24px 0;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 12px;
+    background: #121212;
+    overflow-x: auto;
+}
+
+#comparison .table {
+    width: 100%;
+    min-width: 580px;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    --bs-table-bg: transparent;
+    --bs-table-color: #f4f1ea;
+    --bs-table-border-color: rgba(255, 255, 255, 0.09);
+}
+
+/* Selected-car count and average price */
+#comparison caption {
+    caption-side: top;
+    padding: 18px 22px;
+
+    color: #e0d8c9;
+    background: #1a1a1a;
+    border-bottom: 2px solid #ef352d;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+/* Column headings */
+#comparison thead th {
+    padding: 18px 22px;
+
+    color: #bcbcbc;
+    background: #161616;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+/* Body cells */
+#comparison tbody th,
+#comparison tbody td {
+    padding: 22px;
+    vertical-align: middle;
+
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background-color 0.2s ease;
+}
+
+/* Vehicle names */
+#comparison tbody th {
+    color: #fff;
+    font-weight: 800;
+}
+
+/* Edition labels */
+#comparison tbody td:nth-child(2) {
+    color: #bcbcbc;
+}
+
+/* Prices */
+#comparison tbody td:nth-child(3) {
+    color: #ff827b;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* Align price and power columns */
+#comparison thead th:nth-child(3),
+#comparison thead th:nth-child(4),
+#comparison tbody td:nth-child(3),
+#comparison tbody td:nth-child(4) {
+    text-align: right;
+}
+
+#comparison tbody td:nth-child(4) {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Subtle alternating rows */
+#comparison tbody tr:nth-child(even) > * {
+    background-color: rgba(255, 255, 255, 0.025);
+}
+
+/* Highlight the row under the pointer */
+#comparison tbody tr:hover > * {
+    background-color: rgba(239, 53, 45, 0.08);
+}
+
+#comparison tbody tr:last-child > * {
+    border-bottom: 0;
+}
+
+/* Empty comparison state */
+#comparison > p {
+    margin: 0;
+    padding: 28px 22px;
+    color: #bcbcbc;
+}
+
+/* Clear comparison button */
+#clear-compare {
+    padding: 13px 22px;
+    border-radius: 6px;
+}
+
+/* Compact spacing on mobile */
+@media (max-width: 767px) {
+    #comparison caption {
+        padding: 16px;
+    }
+
+    #comparison thead th {
+        padding: 15px 16px;
+    }
+
+    #comparison tbody th,
+    #comparison tbody td {
+        padding: 18px 16px;
+    }
+}
+/* Readable FAQ questions */
+.custom-accordion .accordion-button {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-transform: none;
+
+    padding: 20px 24px;
+    color: #f4f1ea;
+    background: #161616;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: #ff938d;
+    background: #1c1c1c;
+}
+
+/* Readable FAQ answers */
+.custom-accordion .accordion-body {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.8;
+
+    padding: 18px 24px 24px;
+    color: #d0d0d0;
+    background: #121212;
+}
+
+.custom-accordion .accordion-button::after {
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+@media (max-width: 767px) {
+    .custom-accordion .accordion-button {
+        padding: 18px;
+    }
+
+    .custom-accordion .accordion-body {
+        padding: 16px 18px 20px;
+    }
+}
